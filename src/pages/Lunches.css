@@ -1,0 +1,43 @@
+#lunches {
+  width: 100%;
+}
+
+#lunches ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#lunches ul a {
+  text-decoration: none;
+}
+
+#lunches ul li {
+  width: 150px;
+  margin: 20px;
+  list-style: none;
+  color: #000;
+  background: #fff;
+  padding: 20px;
+}
+
+#lunches ul li img {
+  width: 100%;
+}
+
+#lunches ul li p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+#pagination {
+  text-align: center;
+}
+
+#pagination button {
+  margin: 10px;
+  font-size: 14px;
+  padding: 5px;
+  background: #e3e3e3;
+}
