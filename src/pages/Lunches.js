@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import api from "../services/api";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import api from '../services/api';
+import { Link } from 'react-router-dom';
 
-import "./Lunches.css";
+import './Lunches.css';
 
 export default class Lunches extends Component {
   state = {
@@ -12,7 +12,7 @@ export default class Lunches extends Component {
   };
 
   async componentDidMount() {
-    const response = await api.get("/lunches");
+    const response = await api.get('/lunches');
 
     this.setState({
       lunches: response.data.lunches,
@@ -45,12 +45,12 @@ export default class Lunches extends Component {
   };
 
   render() {
-    const { currentPage, totalPages } = this.state;
+    const { currentPage, totalPages, lunches } = this.state;
 
     return (
       <div id="lunches">
         <ul>
-          {this.state.lunches.map(lunch => (
+          {lunches.map(lunch => (
             <Link to={`/lunches/${lunch.id}`} key={lunch.id}>
               <li>
                 <img src={lunch.url} alt={lunch.name} width="100px" />
@@ -68,13 +68,13 @@ export default class Lunches extends Component {
         <div id="pagination">
           <button
             onClick={this.prevPage}
-            disabled={currentPage === 1 ? "disabled" : ""}
+            disabled={currentPage === 1 ? 'disabled' : ''}
           >
             Prev
           </button>
           <button
             onClick={this.nextPage}
-            disabled={currentPage === totalPages ? "disabled" : ""}
+            disabled={currentPage === totalPages ? 'disabled' : ''}
           >
             Next
           </button>
